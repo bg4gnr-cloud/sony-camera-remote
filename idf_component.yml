@@ -1,7 +1,0 @@
-dependencies:
-  espressif/button: "^4.2.1"
-  espressif/esp_lcd_co5300: "^2.2.0"
-  espressif/esp_lvgl_port: "^2.9.0"
-  lvgl/lvgl:
-    version: "^9.2.0"
-    public: true
