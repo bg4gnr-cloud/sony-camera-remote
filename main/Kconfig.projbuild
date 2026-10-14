@@ -1,0 +1,37 @@
+menu "Sony camera Wi-Fi"
+
+config SONYCAM_WIFI_SSID
+    string "Camera hotspot SSID"
+    default ""
+    help
+        SSID of the Sony camera's smartphone remote-control hotspot.
+
+config SONYCAM_WIFI_PASSWORD
+    string "Camera hotspot password"
+    default ""
+    help
+        Password of the Sony camera's smartphone remote-control hotspot.
+        Leave empty for an open network.
+
+config SONYCAM_CAMERA_API_URL
+    string "Sony Camera Remote API URL"
+    default "http://192.168.122.1/sony/camera"
+    help
+        JSON-RPC endpoint for the Sony camera. Change this if the camera uses
+        a different address or path.
+
+config SONYCAM_WIFI_RECONNECT_INITIAL_MS
+    int "Initial Wi-Fi reconnect delay (ms)"
+    range 250 60000
+    default 1000
+    help
+        Initial delay between failed attempts to reconnect to the camera hotspot.
+
+config SONYCAM_WIFI_RECONNECT_MAX_MS
+    int "Maximum Wi-Fi reconnect delay (ms)"
+    range 1000 300000
+    default 30000
+    help
+        Maximum delay used by exponential Wi-Fi reconnect backoff.
+
+endmenu
